@@ -32,5 +32,27 @@ frame_conteudo_principal.pack_propagate(False) # Impede o frame de encolher
 # 2.1 Menu de controle de tempo
 frame_contole_tempo = Frame(frame_conteudo_principal, bg='#9B9B9B', height=160, width=250)
 frame_contole_tempo.pack(pady=10)
+frame_contole_tempo.pack_propagate(False)
+
+# 2.1.1 String Sessão
+label_string_sessao = Label(
+    frame_contole_tempo,
+    text="Sessão",
+    bg='#9B9B9B',
+    fg='black',
+    font=("Verdana", 14, "bold")
+)
+label_string_sessao.pack(pady=5)
+
+# 2.1.2 Cronômetro
+label_cronometro = Label(
+    frame_contole_tempo, 
+    text='30:00',
+    bg='#9B9B9B',
+    fg='black',
+    font=("Verdana", 30, "bold")
+)
+label_cronometro.pack()
+
 
 janela_principal.mainloop()
