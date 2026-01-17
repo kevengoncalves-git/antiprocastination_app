@@ -1,4 +1,4 @@
-print("Bem vindo ao app Anti-Procastinação!")
+from funcoes_app import temporizador
 
 from tkinter import *
 
@@ -45,13 +45,20 @@ label_string_sessao = Label(
 label_string_sessao.pack(pady=5)
 
 # 2.1.2 Cronômetro
+#processamento pra mandar o tempo
+tempo_limite = "00:10"
+lista_temporal = tempo_limite.split(':')
+total_segundos_inicial = int(lista_temporal[0]) * 60 + int(lista_temporal[1])
+
 label_cronometro = Label(
     frame_contole_tempo, 
-    text='30:00',
     bg='#9B9B9B',
+    text=tempo_limite,
     fg='black',
     font=("Verdana", 30, "bold")
 )
+#função responsável pela mudança de tempo
+temporizador(total_segundos_inicial, label_cronometro)
 label_cronometro.pack()
 
 
